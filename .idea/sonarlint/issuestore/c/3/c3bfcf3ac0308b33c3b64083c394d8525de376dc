@@ -1,0 +1,9 @@
+
+u
+java:S2637)"XThis method's return value is marked "androidx.annotation.NonNull" but null is returned.(•πÔç8ë∂»É•.
+t
+java:S3077"WUse a thread-safe type; adding "volatile" is not enough to make this field thread-safe.(§∏˚€8ë∂»É•.
+p
+java:S3008"SRename this field "INSTANCE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§∏˚€8ë∂»É•.
+u
+java:S2637#"XThis method's return value is marked "androidx.annotation.NonNull" but null is returned.(•πÔç8ë∂»É•.

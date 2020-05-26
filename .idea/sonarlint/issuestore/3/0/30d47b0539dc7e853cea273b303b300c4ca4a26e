@@ -1,0 +1,8 @@
+
+b
+java:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(‚‚§¨
+>
+java:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+U
+java:S1118
+":Add a private constructor to hide the implicit public one.(ôÖ®¬ùÿÿÿÿ
