@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="10dp"
+    app:cardMaxElevation="10dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginTop="3dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginBottom="3dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp">
+
+        <TextView
+            android:id="@+id/mTvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#666666"
+            android:textSize="16sp"
+            android:text="空气质量" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/mTv1"
+                    tools:text="44"
+                    android:layout_marginTop="12dp"
+                    android:textSize="30sp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="空气指数"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/mTv2"
+                    tools:text="44"
+                    android:layout_marginTop="12dp"
+                    android:textSize="30sp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="PM2.5指数"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
