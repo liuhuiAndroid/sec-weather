@@ -4,7 +4,7 @@ import android.app.Application;
 
 import timber.log.Timber;
 
-public class WeatherApplication extends Application {
+public class WeatherApp extends Application {
 
     public static Application mContext;
 

@@ -10,14 +10,22 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.seckill.weather.R;
+import com.seckill.weather.data.PM25;
 import com.seckill.weather.data.Weather;
 
 public class WeatherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private Weather weather;
+    private PM25 pm25;
 
     public void setWeather(Weather weather) {
         this.weather = weather;
+        notifyDataSetChanged();
+    }
+
+    public void setPm25(PM25 pm25) {
+        this.pm25 = pm25;
+        notifyItemChanged(2);
     }
 
     public static final int TYPE_1 = 0;
@@ -46,10 +54,10 @@ public class WeatherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        int itemViewType = getItemViewType(position);
         if (weather != null) {
             if (weather.getData() != null && weather.getData().size() > 0) {
                 Weather.DataBean todayWeather = weather.getData().get(0);
-                int itemViewType = getItemViewType(position);
                 if (itemViewType == TYPE_1) {
                     ((ViewHolder1) holder).mTv0.setText(weather.getUpdate_time());
                     ((ViewHolder1) holder).mTv1.setText(todayWeather.getTem() + "℃");
@@ -62,7 +70,6 @@ public class WeatherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     smallRecyclerView.setAdapter(smallAdapter);
                 } else if (itemViewType == TYPE_3) {
                     ((ViewHolder3) holder).mTv1.setText(todayWeather.getAir());
-                    ((ViewHolder3) holder).mTv2.setText("44");
                 } else if (itemViewType == TYPE_4) {
                     StringBuilder stringBuilder = new StringBuilder();
                     if (todayWeather.getIndex() != null && todayWeather.getIndex().size() > 0) {
@@ -75,6 +82,9 @@ public class WeatherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     ((ViewHolder4) holder).tvDetail.setText(stringBuilder.toString());
                 }
             }
+        }
+        if (pm25 != null && itemViewType == TYPE_3) {
+            ((ViewHolder3) holder).mTv2.setText(pm25.getPm25());
         }
     }
 

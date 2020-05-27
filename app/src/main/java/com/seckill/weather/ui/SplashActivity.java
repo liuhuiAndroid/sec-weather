@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,7 +23,6 @@ import com.seckill.weather.inter.OnItemClickListener;
 import com.seckill.weather.utilities.JsonUtils;
 import com.seckill.weather.viewmodel.CityViewModel;
 import com.seckill.weather.viewmodel.CustomViewModelProvider;
-import com.seckill.weather.widget.GridDividerItemDecoration;
 import com.squareup.moshi.JsonAdapter;
 import com.squareup.moshi.Moshi;
 import com.squareup.moshi.Types;
@@ -48,7 +48,7 @@ public class SplashActivity extends BaseActivity {
         setContentView(R.layout.activity_splash);
         mCityViewModel = new ViewModelProvider(this, CustomViewModelProvider.providerCityViewModel())
                 .get(CityViewModel.class);
-        ((TextView) findViewById(R.id.mTvTitle)).setText("省份列表");
+        ((TextView) findViewById(R.id.mTvTitle)).setText("中国");
 
         try {
             // 从 assets 读取城市数据
@@ -71,14 +71,14 @@ public class SplashActivity extends BaseActivity {
                             moshi.adapter(Types.newParameterizedType(List.class, City.class));
                     String result = jsonAdapter.toJson(cities);
                     intent.putExtra("City", result);
+                    intent.putExtra("provinceZh", mProvinceList.get(position).getProvinceZh());
                     startActivity(intent);
                 }
             });
             mRecyclerView.setAdapter(mCityAdapter);
-//            mRecyclerView.addItemDecoration(
-//                    new GridDividerItemDecoration(SplashActivity.this, 1,
-//                            0, false, false,
-//                            Color.parseColor("#CCCCCC")));
+            // 添加分割线
+            DividerItemDecoration decoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+            mRecyclerView.addItemDecoration(decoration);
             mGroupCityList = groupList(cityList);
 
 

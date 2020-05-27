@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -31,7 +32,15 @@ public class CityListActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        ((TextView) findViewById(R.id.mTvTitle)).setText("城市列表");
+        String provinceZh = getIntent().getStringExtra("provinceZh");
+        ((TextView) findViewById(R.id.mTvTitle)).setText(provinceZh);
+        findViewById(R.id.mIvBack).setVisibility(View.VISIBLE);
+        findViewById(R.id.mIvBack).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         String cityResult = getIntent().getStringExtra("City");
         Moshi moshi = new Moshi.Builder().build();
@@ -56,6 +65,9 @@ public class CityListActivity extends BaseActivity {
             });
 
             mRecyclerView.setAdapter(mCityAdapter);
+            // 添加分割线
+            DividerItemDecoration decoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+            mRecyclerView.addItemDecoration(decoration);
 
             mCityAdapter.setCityList(cityList);
         } catch (IOException e) {

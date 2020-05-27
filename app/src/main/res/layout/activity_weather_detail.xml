@@ -24,6 +24,14 @@
             android:layout_alignParentBottom="true"
             android:background="#cccccc" />
 
+        <ImageView
+            android:id="@+id/mIvBack"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_back"/>
+
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
