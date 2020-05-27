@@ -41,8 +41,8 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.ViewHolder> {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // 根据 RecyclerView 获得当前 View 的位置
                 if (mRecyclerView != null) {
+                    // 根据 RecyclerView 获得当前 View 的位置
                     int position = mRecyclerView.getChildAdapterPosition(view);
                     onItemClickListener.onClick(view, position);
                 }
@@ -56,7 +56,7 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.ViewHolder> {
         City city = mCityList.get(position);
         if (cityType == CityType.CITY) {
             holder.cityName.setText(city.getCityZh());
-        } else if (cityType == CityType.PROVINCE){
+        } else if (cityType == CityType.PROVINCE) {
             holder.cityName.setText(city.getProvinceZh());
         }
     }

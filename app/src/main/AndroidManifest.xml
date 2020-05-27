@@ -13,7 +13,7 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.SplashActivity">
+        <activity android:name=".ui.ProvinceListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

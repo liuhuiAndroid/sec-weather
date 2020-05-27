@@ -4,11 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 /**
  * 城市
  */
 @Entity(tableName = "city")
-public class City {
+public class City implements Serializable {
 
     @PrimaryKey
     @NonNull
