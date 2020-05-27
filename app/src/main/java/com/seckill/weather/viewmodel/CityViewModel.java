@@ -24,7 +24,7 @@ public class CityViewModel extends AndroidViewModel {
         return mRepository.getAllCity();
     }
 
-    public void insert(City city) {
-        mRepository.insert(city);
+    public void insertList(List<City> cityList) {
+        mRepository.insertList(cityList);
     }
 }

@@ -36,10 +36,6 @@ public class CityRepository {
     public LiveData<List<City>> getAllCity() {
         if (mAllCityLiveData == null) {
             mAllCityLiveData = mCityDao.queryAll();
-            if (mAllCityLiveData.getValue() == null || mAllCityLiveData.getValue().size() == 0) {
-                List<City> cityList = ConfigUtil.getCityList(mContext);
-                insertList(cityList);
-            }
         }
         return mAllCityLiveData;
     }

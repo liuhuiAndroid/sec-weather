@@ -58,7 +58,9 @@ public class ProvinceListActivity extends BaseActivity {
                 }
                 mCityAdapter.setCityList(mProvinceList);
             } else {
-
+                // 从资源文件获取数据保存到数据库
+                List<City> cityListAssets = ConfigUtil.getCityList(this);
+                mCityViewModel.insertList(cityListAssets);
             }
         });
 //        // 从 assets 读取城市数据
