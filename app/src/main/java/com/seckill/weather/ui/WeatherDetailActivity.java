@@ -39,6 +39,10 @@ public class WeatherDetailActivity extends BaseActivity {
         mWeatherAdapter = new WeatherAdapter();
         mRecyclerView.setAdapter(mWeatherAdapter);
 
+        loadData();
+    }
+
+    private void loadData() {
         mWeatherDetailViewModel.getWeatherLiveData().observe(this,
                 weather -> mWeatherAdapter.setWeather(weather));
         mWeatherDetailViewModel.getPm25LiveData().observe(this,

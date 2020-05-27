@@ -1,8 +1,6 @@
 package com.seckill.weather.repository;
 
 import android.app.Application;
-import android.content.Context;
-import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
@@ -45,6 +43,7 @@ public class CityRepository {
     }
 
     public void insertList(List<City> cityList) {
+        // 使用 RxJava 切换到后台线程给数据库插入数据
         Completable.fromAction(() -> mCityDao.insertAll(cityList))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

@@ -34,16 +34,6 @@ public class ProvinceListActivity extends BaseActivity {
 
         // 设置标题
         ((TextView) findViewById(R.id.mTvTitle)).setText("中国");
-        mCityViewModel.getAllProvince().observe(this, provinceList -> {
-            if (provinceList != null && provinceList.size() > 0) {
-                Timber.i("数据库获取到省份数据：" + provinceList.size());
-                mProvinceAdapter.setProvinceList(provinceList);
-            } else {
-                Timber.i("数据库没有获取到省份数据");
-                // 从资源文件获取数据保存到数据库
-                mCityViewModel.insertList(ConfigUtil.getCityList(this));
-            }
-        });
 
         RecyclerView mRecyclerView = findViewById(R.id.mRecyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -57,6 +47,21 @@ public class ProvinceListActivity extends BaseActivity {
         mRecyclerView.setAdapter(mProvinceAdapter);
         // 添加分割线
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+
+        loadData();
+    }
+
+    private void loadData() {
+        mCityViewModel.getAllProvince().observe(this, provinceList -> {
+            if (provinceList != null && provinceList.size() > 0) {
+                Timber.i("数据库获取到省份数据：" + provinceList.size());
+                mProvinceAdapter.setProvinceList(provinceList);
+            } else {
+                Timber.i("数据库没有获取到省份数据");
+                // 从资源文件获取数据保存到数据库
+                mCityViewModel.insertList(ConfigUtil.getCityList(this));
+            }
+        });
     }
 
 }

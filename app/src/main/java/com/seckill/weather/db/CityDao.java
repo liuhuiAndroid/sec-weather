@@ -13,13 +13,7 @@ import java.util.List;
 public interface CityDao {
 
     @Insert
-    void insert(City city);
-
-    @Insert
     void insertAll(List<City> cityList);
-
-    @Query("SELECT * FROM city")
-    LiveData<List<City>> queryAll();
 
     @Query("select province_zh FROM city group by province_zh")
     LiveData<List<String>> queryProvinceZh();

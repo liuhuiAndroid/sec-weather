@@ -67,4 +67,5 @@ public class CityListActivity extends BaseActivity {
             }
         });
     }
+
 }
