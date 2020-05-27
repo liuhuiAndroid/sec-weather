@@ -15,7 +15,10 @@ public interface CityDao {
     @Insert
     void insert(City city);
 
-    @Query("select * from city")
+    @Insert
+    void insertAll(List<City> cityList);
+
+    @Query("SELECT * FROM city")
     LiveData<List<City>> queryAll();
 
 }

@@ -1,6 +1,7 @@
 package com.seckill.weather.data;
 
 import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -16,15 +17,34 @@ public class City implements Serializable {
     @NonNull
     private Long id;
 
+    @ColumnInfo(name = "city_en")
     private String cityEn;
+
+    @ColumnInfo(name = "city_zh")
     private String cityZh;
+
+    @ColumnInfo(name = "province_en")
     private String provinceEn;
+
+    @ColumnInfo(name = "province_zh")
     private String provinceZh;
+
+    @ColumnInfo(name = "country_en")
     private String countryEn;
+
+    @ColumnInfo(name = "country_zh")
     private String countryZh;
+
+    @ColumnInfo(name = "leader_en")
     private String leaderEn;
+
+    @ColumnInfo(name = "leader_zh")
     private String leaderZh;
+
+    @ColumnInfo(name = "lat")
     private double lat;
+
+    @ColumnInfo(name = "lon")
     private double lon;
 
     public Long getId() {
@@ -113,6 +133,9 @@ public class City implements Serializable {
 
     public void setLon(double lon) {
         this.lon = lon;
+    }
+
+    public City() {
     }
 
     @Override

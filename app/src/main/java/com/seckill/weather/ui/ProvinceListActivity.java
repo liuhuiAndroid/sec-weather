@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,6 +19,9 @@ import com.seckill.weather.data.CityType;
 import com.seckill.weather.inter.OnItemClickListener;
 import com.seckill.weather.utilities.ConfigUtil;
 import com.seckill.weather.utilities.ListUtil;
+import com.seckill.weather.viewmodel.CityViewModel;
+import com.seckill.weather.viewmodel.CustomViewModelProvider;
+import com.seckill.weather.viewmodel.WeatherDetailViewModel;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -25,6 +30,7 @@ import java.util.Map;
 
 public class ProvinceListActivity extends BaseActivity {
 
+    private CityViewModel mCityViewModel;
     private CityAdapter mCityAdapter;
     // 省份列表
     private List<City> mProvinceList = new ArrayList<>();
@@ -35,10 +41,28 @@ public class ProvinceListActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city_list);
+
+        mCityViewModel = new ViewModelProvider(this,
+                CustomViewModelProvider.providerCityViewModel())
+                .get(CityViewModel.class);
+
         // 设置标题
         ((TextView) findViewById(R.id.mTvTitle)).setText("中国");
-        // 从 assets 读取城市数据
-        List<City> cityList = ConfigUtil.getCityList(this);
+        mCityViewModel.getAllCity().observe(this, cityList -> {
+            if (cityList != null && cityList.size() > 0) {
+                // 对城市列表进行分组
+                mCityGroupList = ListUtil.cityListToGroup(cityList);
+                for (Map.Entry<String, List<City>> entry : mCityGroupList.entrySet()) {
+                    // 每个省挑出一个城市作为省列表数据
+                    mProvinceList.add(entry.getValue().get(0));
+                }
+                mCityAdapter.setCityList(mProvinceList);
+            } else {
+
+            }
+        });
+//        // 从 assets 读取城市数据
+//        List<City> cityList = ConfigUtil.getCityList(this);
         RecyclerView mRecyclerView = findViewById(R.id.mRecyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mCityAdapter = new CityAdapter(CityType.PROVINCE);
@@ -56,13 +80,7 @@ public class ProvinceListActivity extends BaseActivity {
         mRecyclerView.setAdapter(mCityAdapter);
         // 添加分割线
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
-        // 对城市列表进行分组
-        mCityGroupList = ListUtil.cityListToGroup(cityList);
-        for (Map.Entry<String, List<City>> entry : mCityGroupList.entrySet()) {
-            // 每个省挑出一个城市作为省列表数据
-            mProvinceList.add(entry.getValue().get(0));
-        }
-        mCityAdapter.setCityList(mProvinceList);
+
     }
 
 }

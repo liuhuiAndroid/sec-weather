@@ -26,6 +26,7 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.ViewHolder> {
 
     public void setCityList(List<City> mCityList) {
         this.mCityList = mCityList;
+        notifyDataSetChanged();
     }
 
     private OnItemClickListener onItemClickListener;
@@ -63,7 +64,11 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return mCityList.size();
+        if (mCityList != null) {
+            return mCityList.size();
+        } else {
+            return 0;
+        }
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
