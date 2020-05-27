@@ -5,12 +5,10 @@ import android.content.Context;
 import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 
 import com.seckill.weather.data.City;
 import com.seckill.weather.db.CityDao;
 import com.seckill.weather.db.WeatherDatabase;
-import com.seckill.weather.utilities.ConfigUtil;
 
 import java.util.List;
 
@@ -24,24 +22,26 @@ import timber.log.Timber;
 public class CityRepository {
 
     private CityDao mCityDao;
-    private LiveData<List<City>> mAllCityLiveData;
-    private Context mContext;
+    private LiveData<List<String>> mAllProvinceLiveData;
+    private LiveData<List<City>> mCityByProvinceLiveData;
 
     public CityRepository(Application application) {
-        this.mContext = application;
         WeatherDatabase database = WeatherDatabase.getDatabase(application);
         mCityDao = database.cityDao();
     }
 
-    public LiveData<List<City>> getAllCity() {
-        if (mAllCityLiveData == null) {
-            mAllCityLiveData = mCityDao.queryAll();
+    public LiveData<List<String>> getAllProvince() {
+        if (mAllProvinceLiveData == null) {
+            mAllProvinceLiveData = mCityDao.queryProvinceZh();
         }
-        return mAllCityLiveData;
+        return mAllProvinceLiveData;
     }
 
-    public void insert(City city) {
-        new InsertAsyncTask(mCityDao).execute(city);
+    public LiveData<List<City>> getCityByProvince(String provinceZh) {
+        if (mCityByProvinceLiveData == null) {
+            mCityByProvinceLiveData = mCityDao.queryCityByProvinceZh(provinceZh);
+        }
+        return mCityByProvinceLiveData;
     }
 
     public void insertList(List<City> cityList) {
@@ -66,17 +66,4 @@ public class CityRepository {
                 });
     }
 
-    private static class InsertAsyncTask extends AsyncTask<City, Void, Void> {
-        private CityDao mAsyncDao;
-
-        InsertAsyncTask(CityDao wordDao) {
-            this.mAsyncDao = wordDao;
-        }
-
-        @Override
-        protected Void doInBackground(City... words) {
-            mAsyncDao.insert(words[0]);
-            return null;
-        }
-    }
 }

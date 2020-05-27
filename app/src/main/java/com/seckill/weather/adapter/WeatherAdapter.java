@@ -101,6 +101,8 @@ public class WeatherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         }
     }
 
+
+
     @Override
     public int getItemCount() {
         return 4;

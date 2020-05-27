@@ -9,21 +9,20 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.seckill.weather.R;
-import com.seckill.weather.data.City;
 import com.seckill.weather.inter.OnItemClickListener;
 
 import java.util.List;
 
-public class CityAdapter extends RecyclerView.Adapter<CityAdapter.ViewHolder> {
+public class ProvinceAdapter extends RecyclerView.Adapter<ProvinceAdapter.ViewHolder> {
 
-    private List<City> mCityList;
+    private List<String> mProvinceList;
 
-    public List<City> getCityList() {
-        return mCityList;
+    public List<String> getmProvinceList() {
+        return mProvinceList;
     }
 
-    public void setCityList(List<City> mCityList) {
-        this.mCityList = mCityList;
+    public void setProvinceList(List<String> provinceList) {
+        this.mProvinceList = provinceList;
         notifyDataSetChanged();
     }
 
@@ -49,14 +48,13 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        City city = mCityList.get(position);
-        holder.cityName.setText(city.getCityZh());
+        holder.cityName.setText(mProvinceList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        if (mCityList != null) {
-            return mCityList.size();
+        if (mProvinceList != null) {
+            return mProvinceList.size();
         } else {
             return 0;
         }

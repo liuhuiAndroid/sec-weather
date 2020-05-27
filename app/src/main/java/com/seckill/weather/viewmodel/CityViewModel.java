@@ -20,8 +20,18 @@ public class CityViewModel extends AndroidViewModel {
         this.mRepository = new CityRepository(application);
     }
 
-    public LiveData<List<City>> getAllCity() {
-        return mRepository.getAllCity();
+    /**
+     * 获取所以省份名称
+     */
+    public LiveData<List<String>> getAllProvince() {
+        return mRepository.getAllProvince();
+    }
+
+    /**
+     * 根据省份名称查询城市列表
+     */
+    public LiveData<List<City>> getCityByProvince(String provinceZh) {
+        return mRepository.getCityByProvince(provinceZh);
     }
 
     public void insertList(List<City> cityList) {

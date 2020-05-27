@@ -21,4 +21,10 @@ public interface CityDao {
     @Query("SELECT * FROM city")
     LiveData<List<City>> queryAll();
 
+    @Query("select province_zh FROM city group by province_zh")
+    LiveData<List<String>> queryProvinceZh();
+
+    @Query("select * FROM city WHERE province_zh = :provinceZh")
+    LiveData<List<City>> queryCityByProvinceZh(String provinceZh);
+
 }
