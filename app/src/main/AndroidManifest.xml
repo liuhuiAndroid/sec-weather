@@ -28,6 +28,10 @@
         <activity
             android:name=".ui.WeatherDetailActivity"
             android:launchMode="singleTop" />
+
+        <activity
+            android:name=".ui.SearchCityListActivity"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>

@@ -22,6 +22,7 @@ public class CityRepository {
     private CityDao mCityDao;
     private LiveData<List<String>> mAllProvinceLiveData;
     private LiveData<List<City>> mCityByProvinceLiveData;
+    private LiveData<List<City>> mCityByCityNameLiveData;
 
     public CityRepository(Application application) {
         WeatherDatabase database = WeatherDatabase.getDatabase(application);
@@ -40,6 +41,10 @@ public class CityRepository {
             mCityByProvinceLiveData = mCityDao.queryCityByProvinceZh(provinceZh);
         }
         return mCityByProvinceLiveData;
+    }
+
+    public LiveData<List<City>> getCityByName(String cityName) {
+        return mCityDao.getCityByName(cityName);
     }
 
     public void insertList(List<City> cityList) {

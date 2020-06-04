@@ -25,4 +25,15 @@
         android:src="@mipmap/ic_back"
         android:visibility="gone" />
 
+    <ImageView
+        android:id="@+id/mIvSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:padding="5dp"
+        android:layout_marginRight="15dp"
+        android:src="@mipmap/ic_search"
+        android:layout_alignParentRight="true"
+        android:visibility="gone" />
+
 </RelativeLayout>

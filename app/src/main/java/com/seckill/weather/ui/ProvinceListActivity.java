@@ -2,6 +2,7 @@ package com.seckill.weather.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.lifecycle.ViewModelProvider;
@@ -34,6 +35,11 @@ public class ProvinceListActivity extends BaseActivity {
 
         // 设置标题
         ((TextView) findViewById(R.id.mTvTitle)).setText("中国");
+        findViewById(R.id.mIvSearch).setVisibility(View.VISIBLE);
+        findViewById(R.id.mIvSearch).setOnClickListener(v -> {
+            Intent intent = new Intent(ProvinceListActivity.this, SearchCityListActivity.class);
+            startActivity(intent);
+        });
 
         RecyclerView mRecyclerView = findViewById(R.id.mRecyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));

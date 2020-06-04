@@ -37,4 +37,11 @@ public class CityViewModel extends AndroidViewModel {
     public void insertList(List<City> cityList) {
         mRepository.insertList(cityList);
     }
+
+    /**
+     * 根据省份名称查询城市列表
+     */
+    public LiveData<List<City>> getCityByName(String cityName) {
+        return mRepository.getCityByName(cityName);
+    }
 }

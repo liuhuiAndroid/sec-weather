@@ -21,4 +21,7 @@ public interface CityDao {
     @Query("select * FROM city WHERE province_zh = :provinceZh")
     LiveData<List<City>> queryCityByProvinceZh(String provinceZh);
 
+    @Query("select * FROM city WHERE city_zh like '%' || :cityName || '%'")
+    LiveData<List<City>> getCityByName(String cityName);
+
 }
