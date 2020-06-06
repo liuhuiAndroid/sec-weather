@@ -3,6 +3,7 @@ package com.seckill.weather.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.lifecycle.ViewModelProvider;
@@ -17,6 +18,8 @@ import com.seckill.weather.utilities.ConfigUtil;
 import com.seckill.weather.viewmodel.CityViewModel;
 import com.seckill.weather.viewmodel.CustomViewModelProvider;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import timber.log.Timber;
 
 public class ProvinceListActivity extends BaseActivity {
@@ -24,24 +27,31 @@ public class ProvinceListActivity extends BaseActivity {
     private CityViewModel mCityViewModel;
     private ProvinceAdapter mProvinceAdapter;
 
+    @BindView(R.id.mTvTitle)
+    TextView mTvTitle;
+    @BindView(R.id.mIvSearch)
+    ImageView mIvSearch;
+    @BindView(R.id.mRecyclerView)
+    RecyclerView mRecyclerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city_list);
-
+        ButterKnife.bind(this);
         mCityViewModel = new ViewModelProvider(this,
                 CustomViewModelProvider.providerCityViewModel())
                 .get(CityViewModel.class);
 
         // 设置标题
-        ((TextView) findViewById(R.id.mTvTitle)).setText("中国");
-        findViewById(R.id.mIvSearch).setVisibility(View.VISIBLE);
-        findViewById(R.id.mIvSearch).setOnClickListener(v -> {
+        mTvTitle.setText("中国");
+
+        mIvSearch.setVisibility(View.VISIBLE);
+        mIvSearch.setOnClickListener(v -> {
             Intent intent = new Intent(ProvinceListActivity.this, SearchCityListActivity.class);
             startActivity(intent);
         });
 
-        RecyclerView mRecyclerView = findViewById(R.id.mRecyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mProvinceAdapter = new ProvinceAdapter();
         mProvinceAdapter.setOnItemClickListener((view, position) -> {

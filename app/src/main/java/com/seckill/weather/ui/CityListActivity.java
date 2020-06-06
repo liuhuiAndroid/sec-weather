@@ -3,6 +3,7 @@ package com.seckill.weather.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -21,6 +22,8 @@ import com.seckill.weather.viewmodel.CustomViewModelProvider;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import timber.log.Timber;
 
 /**
@@ -31,10 +34,18 @@ public class CityListActivity extends BaseActivity {
     private CityViewModel mCityViewModel;
     private CityAdapter mCityAdapter;
 
+    @BindView(R.id.mTvTitle)
+    TextView mTvTitle;
+    @BindView(R.id.mIvBack)
+    ImageView mIvBack;
+    @BindView(R.id.mRecyclerView)
+    RecyclerView mRecyclerView;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city_list);
+        ButterKnife.bind(this);
 
         mCityViewModel = new ViewModelProvider(this,
                 CustomViewModelProvider.providerCityViewModel())
@@ -42,11 +53,10 @@ public class CityListActivity extends BaseActivity {
 
         String provinceZh = getIntent().getStringExtra("provinceZh");
         // 设置标题
-        ((TextView) findViewById(R.id.mTvTitle)).setText(provinceZh);
-        findViewById(R.id.mIvBack).setVisibility(View.VISIBLE);
-        findViewById(R.id.mIvBack).setOnClickListener(v -> finish());
+        mTvTitle.setText(provinceZh);
+        mIvBack.setVisibility(View.VISIBLE);
+        mIvBack.setOnClickListener(v -> finish());
 
-        RecyclerView mRecyclerView = findViewById(R.id.mRecyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mCityAdapter = new CityAdapter();
 

@@ -1,0 +1,15 @@
+1. 打开天气App进入省份选择页面
+从assets目录的city.json，读取3000+城市数据到sqlite weather_database 数据库，
+然后读取数据库城市数据并且按省份分类，将省份数据通过RecyclerView展示到页面上。
+
+2. 点击某一省份，将省份名称传入城市列表页面，
+根据城市名称从数据库查询该省份的所有城市，并通过RecyclerView展示到页面上。
+
+3. 点击某一城市，将城市Id传入到天气详情页面，
+根据城市ID，从免费的天气接口获取该城市的天气数据和PM2.5数据，
+并通过RecyclerView展示到页面上。天气接口文档：http://doc.tianqiapi.com/603579
+
+4.首页可以点击搜索按钮进入搜索页面，根据关键字在数据库模糊查询城市，
+并通过RecyclerView展示到页面上。点击搜索出来的城市列表可以跳转到天气详情页面。
+
+5. 所有的xml上的控件都通过ButterKnife注入到Activity，省略了findViewById操作。
