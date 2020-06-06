@@ -23,6 +23,7 @@ public class CityRepository {
     private LiveData<List<String>> mAllProvinceLiveData;
     private LiveData<List<City>> mCityByProvinceLiveData;
     private LiveData<List<City>> mCityByCityNameLiveData;
+    private LiveData<List<City>> mCityByCollectedLiveData;
 
     public CityRepository(Application application) {
         WeatherDatabase database = WeatherDatabase.getDatabase(application);
@@ -41,6 +42,13 @@ public class CityRepository {
             mCityByProvinceLiveData = mCityDao.queryCityByProvinceZh(provinceZh);
         }
         return mCityByProvinceLiveData;
+    }
+
+    public LiveData<List<City>> getCityByCollected() {
+        if (mCityByCollectedLiveData == null) {
+            mCityByCollectedLiveData = mCityDao.getCityByCollected();
+        }
+        return mCityByCollectedLiveData;
     }
 
     public LiveData<List<City>> getCityByName(String cityName) {

@@ -47,6 +47,9 @@ public class City implements Serializable {
     @ColumnInfo(name = "lon")
     private double lon;
 
+    @ColumnInfo(name = "collect")
+    private int collect = 0;
+
     public Long getId() {
         return id;
     }
@@ -133,6 +136,14 @@ public class City implements Serializable {
 
     public void setLon(double lon) {
         this.lon = lon;
+    }
+
+    public int getCollect() {
+        return collect;
+    }
+
+    public void setCollect(int collect) {
+        this.collect = collect;
     }
 
     public City() {

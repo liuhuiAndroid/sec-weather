@@ -34,6 +34,13 @@ public class CityViewModel extends AndroidViewModel {
         return mRepository.getCityByProvince(provinceZh);
     }
 
+    /**
+     * 查询已经收藏的城市
+     */
+    public LiveData<List<City>> getCityByCollected() {
+        return mRepository.getCityByCollected();
+    }
+
     public void insertList(List<City> cityList) {
         mRepository.insertList(cityList);
     }

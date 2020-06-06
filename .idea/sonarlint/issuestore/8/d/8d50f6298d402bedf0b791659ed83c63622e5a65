@@ -1,0 +1,9 @@
+
+V
+java:S1128"4Remove this unused import 'android.widget.TextView'.(„Ë‚ˆÿÿÿÿÿ8—¶ÈÈ¨.
+`
+java:S1155W">Use isEmpty() to check whether the collection is empty or not.(ý¥È¶ýÿÿÿÿ8ïÎÄÈ¨.
+œ
+java:S1186N"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ê¥¾àûÿÿÿÿ
+—
+java:S1186I"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«û³±

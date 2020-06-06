@@ -29,8 +29,8 @@ public class ProvinceListActivity extends BaseActivity {
 
     @BindView(R.id.mTvTitle)
     TextView mTvTitle;
-    @BindView(R.id.mIvSearch)
-    ImageView mIvSearch;
+    @BindView(R.id.mIvRight)
+    ImageView mIvRight;
     @BindView(R.id.mRecyclerView)
     RecyclerView mRecyclerView;
 
@@ -45,9 +45,10 @@ public class ProvinceListActivity extends BaseActivity {
 
         // 设置标题
         mTvTitle.setText("中国");
-
-        mIvSearch.setVisibility(View.VISIBLE);
-        mIvSearch.setOnClickListener(v -> {
+        // 搜索
+        mIvRight.setVisibility(View.VISIBLE);
+        mIvRight.setImageResource(R.mipmap.ic_search);
+        mIvRight.setOnClickListener(v -> {
             Intent intent = new Intent(ProvinceListActivity.this, SearchCityListActivity.class);
             startActivity(intent);
         });

@@ -10,6 +10,7 @@ import com.lzy.okgo.model.Response;
 import com.seckill.weather.Constants;
 import com.seckill.weather.data.PM25;
 import com.seckill.weather.data.Weather;
+import com.seckill.weather.repository.CityRepository;
 import com.squareup.moshi.JsonAdapter;
 import com.squareup.moshi.Moshi;
 
