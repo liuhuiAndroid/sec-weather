@@ -32,5 +32,8 @@ public interface CityDao {
     LiveData<List<City>> getCityByCollected();
 
     @Query("update city set collect=1 where city_zh=:cityZh")
-    void update(String cityZh);
+    void collect(String cityZh);
+
+    @Query("update city set collect=0 where city_zh=:cityZh")
+    void uncollect(String cityZh);
 }

@@ -89,7 +89,7 @@ public class WeatherDetailActivity extends BaseActivity {
             Completable.fromAction(() -> {
                 WeatherDatabase database = WeatherDatabase.getDatabase(getApplicationContext());
                 CityDao mCityDao = database.cityDao();
-                mCityDao.update(cityZh);
+                mCityDao.collect(cityZh);
             })
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())

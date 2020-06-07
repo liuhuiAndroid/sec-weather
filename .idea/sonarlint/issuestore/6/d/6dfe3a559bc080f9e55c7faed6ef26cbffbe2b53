@@ -1,13 +1,13 @@
 
-F
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
-Y
-java:S1155K">Use isEmpty() to check whether the collection is empty or not.(ý¥È¶ýÿÿÿÿ
-s
-java:S1450""]Remove the "mCityViewModel" field and declare it as a local variable in the relevant methods.(™‰¥‚
-[
-java:S1128"ERemove this unused import 'com.seckill.weather.utilities.ConfigUtil'.(ó¿–œ
-q
-java:S1450#"[Remove the "mCityAdapter" field and declare it as a local variable in the relevant methods.(´óò¸
 D
 java:S1128".Remove this unused import 'timber.log.Timber'.(ÈÊÖ 
+[
+java:S1128"ERemove this unused import 'com.seckill.weather.utilities.ConfigUtil'.(ó¿–œ
+F
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
+s
+java:S1450""]Remove the "mCityViewModel" field and declare it as a local variable in the relevant methods.(™‰¥‚
+q
+java:S1450#"[Remove the "mCityAdapter" field and declare it as a local variable in the relevant methods.(´óò¸
+Y
+java:S1155K">Use isEmpty() to check whether the collection is empty or not.(ý¥È¶ýÿÿÿÿ

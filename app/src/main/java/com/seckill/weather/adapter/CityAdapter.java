@@ -33,6 +33,13 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.ViewHolder> {
         this.onItemClickListener = onItemClickListener;
     }
 
+
+    private OnItemClickListener onItemLongClickListener;
+
+    public void setOnItemLongClickListener(OnItemClickListener onItemLongClickListener) {
+        this.onItemLongClickListener = onItemLongClickListener;
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -43,6 +50,11 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.ViewHolder> {
                 int position = mRecyclerView.getChildAdapterPosition(view1);
                 onItemClickListener.onClick(view1, position);
             }
+        });
+        view.setOnLongClickListener(v -> {
+            int position = mRecyclerView.getChildAdapterPosition(v);
+            onItemLongClickListener.onClick(v, position);
+            return false;
         });
         return new ViewHolder(view);
     }

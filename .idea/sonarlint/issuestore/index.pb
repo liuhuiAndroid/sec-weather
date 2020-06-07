@@ -33,3 +33,23 @@ J
 doc/天气项目介绍.txt,a\6\a6527ac4caa1de2cbd2e7447fb5a16510007e603
 d
 4app/src/main/java/com/seckill/weather/Constants.java,7\e\7ef6b05dda1246c99f7c2b03e80182745eafecf1
+v
+Fapp/src/main/java/com/seckill/weather/viewmodel/ForecastViewModel.java,f\d\fde6683f638f4bc8b7632643fdb5c7782daeae0c
+d
+4app/src/main/java/com/seckill/weather/data/PM25.java,1\d\1dc3426508d2f19dd1a81d6ca8ba0fe34e963694
+g
+7app/src/main/java/com/seckill/weather/data/Weather.java,1\9\19753a71a2a5af3634bd973ff34ed2a1e00b71fa
+h
+8app/src/main/java/com/seckill/weather/data/Forecast.java,a\6\a69a4b8f1bf7e81392cb54c654a20cac2802f414
+d
+4app/src/main/java/com/seckill/weather/data/City.java,2\c\2ca8dbf1d2f8892720ce28b9e302f63f21e02229
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+n
+>app/src/main/java/com/seckill/weather/ui/ForecastActivity.java,6\f\6f396c884295092f11bbb2412b86d53ce690159c
+r
+Bapp/src/main/java/com/seckill/weather/viewmodel/CityViewModel.java,1\7\17b70bf64833801aa40d520b0219030a2be6bcdd
+s
+Capp/src/main/java/com/seckill/weather/ui/CollectedCityActivity.java,4\f\4fe2336528572bab9cadc58a7341e7697816a260
+e
+5app/src/main/java/com/seckill/weather/db/CityDao.java,d\e\de3b9250d5da89e3b04d2d4d471212c2cedeaa3f

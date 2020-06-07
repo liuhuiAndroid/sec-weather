@@ -1,0 +1,5 @@
+
+o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡ïÑÏûÿÿÿÿ8˜°÷Ð¨.
+r	java:S116"VRename this field "update_time" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹€ÆÖ8Ô óÐ¨.
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡ïÑÏûÿÿÿÿ8˜°÷Ð¨.
+j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯¥›Ì8˜°÷Ð¨.

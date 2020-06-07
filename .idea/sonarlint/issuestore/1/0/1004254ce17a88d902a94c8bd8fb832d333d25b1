@@ -1,0 +1,14 @@
+
+Z
+java:S1128
+"8Remove this unused import 'androidx.lifecycle.LiveData'.(ß„İŞşÿÿÿÿ8ÈåŒÓ¨.
+
+java:S1186J"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤8ö‰Ó¨.
+£
+java:S1186S"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¸ÜÒÄøÿÿÿÿ8¥³ŠÓ¨.
+N
+java:S1602W",Remove useless curly braces around statement(åışûÿÿÿÿ8Àç¾Ò¨.
+
+java:S1186b"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤8¥³ŠÓ¨.
+
+java:S1186N"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×İŠÎ8ñ ŠÓ¨.
