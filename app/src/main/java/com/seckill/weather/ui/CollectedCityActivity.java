@@ -75,7 +75,7 @@ public class CollectedCityActivity extends BaseActivity {
 
             AlertDialog.Builder builder = new AlertDialog.Builder(CollectedCityActivity.this);
             builder.setTitle("提示");
-            builder.setMessage("确认取消收藏这个城市吗？");
+            builder.setMessage("确认取消收藏" + city.getCityZh() + "吗？");
             builder.setCancelable(true);
             //设置正面按钮
             builder.setPositiveButton("确定", (dialog, which) -> {
