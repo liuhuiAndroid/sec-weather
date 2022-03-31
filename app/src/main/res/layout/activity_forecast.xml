@@ -45,4 +45,16 @@
         android:text="查看已收藏的城市"
         android:textSize="18sp" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/mTvTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.9"
+        android:text="测试云闪付SDK"
+        android:textSize="18sp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

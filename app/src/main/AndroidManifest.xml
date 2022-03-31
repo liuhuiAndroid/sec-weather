@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.seckill.weather">
+    package="com.unionpay.app">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".WeatherApp"
+        android:name="com.unionpay.app.WeatherApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,7 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".ui.ForecastActivity">
+        <meta-data
+            android:name="com.unionpay.scanCode.id"
+            android:value="125cca5a6a575f9cd4b49a9de7fd9949" />
+        <meta-data
+            android:name="com.unionpay.scanCode.key"
+            android:value="35abec6cbf71bbf90e78f5632b505eda" />
+
+        <activity android:name="com.unionpay.app.ui.ForecastActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -22,24 +29,34 @@
         </activity>
 
         <activity
-            android:name=".ui.ProvinceListActivity"
+            android:name="com.unionpay.app.ui.ProvinceListActivity"
             android:launchMode="singleTop" />
 
         <activity
-            android:name=".ui.CityListActivity"
+            android:name="com.unionpay.app.ui.CityListActivity"
             android:launchMode="singleTop" />
 
         <activity
-            android:name=".ui.CollectedCityActivity"
+            android:name="com.unionpay.app.ui.CollectedCityActivity"
             android:launchMode="singleTop" />
 
         <activity
-            android:name=".ui.WeatherDetailActivity"
+            android:name="com.unionpay.app.ui.WeatherDetailActivity"
             android:launchMode="singleTop" />
 
         <activity
-            android:name=".ui.SearchCityListActivity"
+            android:name="com.unionpay.app.ui.SearchCityListActivity"
             android:launchMode="singleTop" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.unionpay.app.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>
