@@ -14,13 +14,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <meta-data
-            android:name="com.unionpay.scanCode.id"
-            android:value="125cca5a6a575f9cd4b49a9de7fd9949" />
-        <meta-data
-            android:name="com.unionpay.scanCode.key"
-            android:value="35abec6cbf71bbf90e78f5632b505eda" />
-
         <activity android:name="com.unionpay.app.ui.ForecastActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

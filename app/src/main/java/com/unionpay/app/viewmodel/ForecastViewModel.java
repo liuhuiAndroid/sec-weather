@@ -30,7 +30,7 @@ public class ForecastViewModel extends ViewModel {
      * 根据城市查询天气详细信息接口
      */
     private void loadForecast() {
-        OkGo.<String>get(Constants.BASE_URL)
+        OkGo.<String>get(Constants.BASE_URL1)
                 .params("appid", Constants.APP_ID)
                 .params("appsecret", Constants.APP_SECRET)
                 .params("version", "v8")

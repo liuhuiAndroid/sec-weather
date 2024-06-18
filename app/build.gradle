@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin:'com.unionpay.arouter'
 
 android {
     compileSdkVersion 29
@@ -88,12 +87,4 @@ dependencies {
 
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
-
-    api "com.unionpay.upsdk:upSdk:${rootProject.ext.BUILD_VERSION}"
-    api "com.unionpay.upsdk:upCodeScan:${rootProject.ext.BUILD_VERSION}"
-    api "com.unionpay.upsdk:upCardManager:${rootProject.ext.BUILD_VERSION}"
-    api "com.unionpay.upsdk:upPaymentCode:${rootProject.ext.BUILD_VERSION}"
-    api "com.unionpay.upsdk:upCollectionCode:${rootProject.ext.BUILD_VERSION}"
-    api "com.unionpay.upsdk:upPay:${rootProject.ext.BUILD_VERSION}"
-    annotationProcessor 'com.unionpay.arouter:arouter-compiler:1.0.0'
 }

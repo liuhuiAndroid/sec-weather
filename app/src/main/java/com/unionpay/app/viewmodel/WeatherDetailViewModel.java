@@ -70,7 +70,7 @@ public class WeatherDetailViewModel extends ViewModel {
      * 根据城市查询空气质量指数 PM2.5 污染物
      */
     private void loadPM25(Long cityId) {
-        OkGo.<String>get(Constants.BASE_URL)
+        OkGo.<String>get(Constants.BASE_URL1)
                 .params("appid", Constants.APP_ID)
                 .params("appsecret", Constants.APP_SECRET)
                 .params("version", "v10")
