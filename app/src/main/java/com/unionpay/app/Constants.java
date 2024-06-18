@@ -10,6 +10,5 @@ public class Constants {
 
     public static final String BASE_URL = "http://v0.yiketianqi.com/api";
     public static final String BASE_URL1 = "http://v1.yiketianqi.com/api";
-    public static final String BASE_URL2 = "https://yiketianqi.com/api";
 
 }

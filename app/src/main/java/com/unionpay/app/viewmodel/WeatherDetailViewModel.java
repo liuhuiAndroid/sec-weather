@@ -37,7 +37,7 @@ public class WeatherDetailViewModel extends ViewModel {
     public LiveData<PM25> getPm25LiveData() {
         if (pm25LiveData == null) {
             pm25LiveData = new MutableLiveData<>();
-            loadPM25(cityId);
+            // loadPM25(cityId);
         }
         return pm25LiveData;
     }
@@ -70,7 +70,7 @@ public class WeatherDetailViewModel extends ViewModel {
      * 根据城市查询空气质量指数 PM2.5 污染物
      */
     private void loadPM25(Long cityId) {
-        OkGo.<String>get(Constants.BASE_URL1)
+        OkGo.<String>get(Constants.BASE_URL)
                 .params("appid", Constants.APP_ID)
                 .params("appsecret", Constants.APP_SECRET)
                 .params("version", "v10")
